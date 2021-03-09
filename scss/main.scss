@@ -1,0 +1,23 @@
+@import 'config';
+@import 'utilities';
+
+// General
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  border: solid 2px red;
+  height: 3rem;
+  background: $Dark-Mode-Text-Light-Mode-Elements;
+
+  #header-container {
+    border: solid 2px purple;
+  }
+}
+
+#main-display {
+  border: solid 2px green;
+  background: $Light-Mode-Background;
+}

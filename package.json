@@ -1,0 +1,23 @@
+{
+  "name": "rest-countries-api-with-color-theme-switcher-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesse10930/rest-countries-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesse10930/rest-countries-api/issues"
+  },
+  "homepage": "https://github.com/jesse10930/rest-countries-api#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
