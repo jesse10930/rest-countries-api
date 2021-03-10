@@ -31,4 +31,13 @@ body {
 
 #main-display {
   border: solid 2px green;
-  background: #fafafa; }
+  background: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem; }
+  #main-display #search-box {
+    border: solid purple 2px;
+    height: 3rem;
+    width: 12rem;
+    padding: 0 8rem 0 2rem; }

@@ -39,4 +39,15 @@ body {
 #main-display {
   border: solid 2px green;
   background: $Light-Mode-Background;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+
+  #search-box {
+    border: solid purple 2px;
+    height: 3rem;
+    width: 12rem;
+    padding: 0 8rem 0 2rem;
+  }
 }
