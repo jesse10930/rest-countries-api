@@ -7,13 +7,32 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 #header {
-  border: solid 2px red;
+  border-bottom: solid 2px $Light-Mode-Input;
   height: 3rem;
   background: $Dark-Mode-Text-Light-Mode-Elements;
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  #header-container {
+  #title {
+    border: solid 2px black;
+  }
+
+  #background-toggle {
     border: solid 2px purple;
+    width: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

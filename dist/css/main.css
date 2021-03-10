@@ -8,12 +8,26 @@
   margin: 0;
   padding: 0; }
 
+body {
+  font-family: 'Nunito Sans', sans-serif; }
+
 #header {
-  border: solid 2px red;
+  border-bottom: solid 2px #858585;
   height: 3rem;
-  background: white; }
-  #header #header-container {
-    border: solid 2px purple; }
+  background: white;
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  #header #title {
+    border: solid 2px black; }
+  #header #background-toggle {
+    border: solid 2px purple;
+    width: 6rem;
+    display: flex;
+    justify-content: space-evenly; }
+    #header #background-toggle:hover {
+      cursor: pointer; }
 
 #main-display {
   border: solid 2px green;
