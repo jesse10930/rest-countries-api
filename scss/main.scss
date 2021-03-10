@@ -12,7 +12,7 @@ body {
 }
 
 #header {
-  border-bottom: solid 2px $Light-Mode-Input;
+  border-bottom: solid 1px $Light-Mode-Input;
   height: 3rem;
   background: $Dark-Mode-Text-Light-Mode-Elements;
   padding: 0 5rem;
@@ -20,12 +20,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  #title {
-    border: solid 2px black;
-  }
-
   #background-toggle {
-    border: solid 2px purple;
     width: 6rem;
     display: flex;
     justify-content: space-evenly;
@@ -37,7 +32,6 @@ body {
 }
 
 #main-display {
-  border: solid 2px green;
   background: $Light-Mode-Background;
   display: flex;
   justify-content: space-between;
@@ -45,9 +39,58 @@ body {
   padding: 2rem 5rem;
 
   #search-box {
-    border: solid purple 2px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
     height: 3rem;
     width: 12rem;
     padding: 0 8rem 0 2rem;
   }
+
+  #continent-dropdown {
+    #dropdown-btn {
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      padding: 1rem;
+      background: $Dark-Mode-Text-Light-Mode-Elements;
+      display: flex;
+      width: 10rem;
+
+      #dropdown-title {
+        padding-right: 1rem;
+      }
+    }
+
+    #dropdown-items {
+      border-radius: 5px;
+      margin-top: 1px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      display: none;
+      position: absolute;
+      background: $Dark-Mode-Text-Light-Mode-Elements;
+      width: 10rem;
+      z-index: 1;
+
+      p {
+        padding: 0.5rem 0 0.5rem 1rem;
+
+        &:hover {
+          cursor: pointer;
+          background: $Light-Mode-Background;
+        }
+      }
+    }
+
+    &:hover #dropdown-items {
+      display: block;
+    }
+  }
+}
+
+#flag-container {
+  height: 100vh;
+  background: $Light-Mode-Background;
 }

@@ -22,17 +22,23 @@
     </div>
   </section>
   <section id="main-display">
-    <input id="search-box" style="font-family:'Font Awesome 5 Free' !important; font-weight: 900" type="text" placeholder="&#xf002;     Search for a country...">
+    <input id="search-box" style="font-family:'Font Awesome 5 Free' !important; font-weight: 900; font-size: 16px;" type="text" placeholder="&#xf002;     Search for a country...">
     <div id="continent-dropdown">
-      <label for="region">Filter by Region</label>
-      <select name="region" id="region">
-        <option value="Africa"></option>
-        <option value="America"></option>
-        <option value="Asia"></option>
-        <option value="Europe"></option>
-        <option value="Oceania"></option>
-      </select>
+      <button id="dropdown-btn">
+        <p id="dropdown-title" style="font-family: 'Nunito Sans', sans-serif; font-size: 14px;">Filter by Region</p>
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <div id="dropdown-items">
+        <p id="africa">Africa</p>
+        <p id="america">America</p>
+        <p id="asia">Asia</p>
+        <p id="europe">Europe</p>
+        <p id="oceania">Oceania</p>
+      </div>
     </div>
+  </section>
+  <section id="flag-container">
+    
   </section>
 </body>
 </html>

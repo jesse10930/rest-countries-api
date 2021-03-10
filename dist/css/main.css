@@ -12,17 +12,14 @@ body {
   font-family: 'Nunito Sans', sans-serif; }
 
 #header {
-  border-bottom: solid 2px #858585;
+  border-bottom: solid 1px #858585;
   height: 3rem;
   background: white;
   padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  #header #title {
-    border: solid 2px black; }
   #header #background-toggle {
-    border: solid 2px purple;
     width: 6rem;
     display: flex;
     justify-content: space-evenly; }
@@ -30,14 +27,47 @@ body {
       cursor: pointer; }
 
 #main-display {
-  border: solid 2px green;
   background: #fafafa;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 5rem; }
   #main-display #search-box {
-    border: solid purple 2px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
     height: 3rem;
     width: 12rem;
     padding: 0 8rem 0 2rem; }
+  #main-display #continent-dropdown #dropdown-btn {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 1rem;
+    background: white;
+    display: flex;
+    width: 10rem; }
+    #main-display #continent-dropdown #dropdown-btn #dropdown-title {
+      padding-right: 1rem; }
+  #main-display #continent-dropdown #dropdown-items {
+    border-radius: 5px;
+    margin-top: 1px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute;
+    background: white;
+    width: 10rem;
+    z-index: 1; }
+    #main-display #continent-dropdown #dropdown-items p {
+      padding: 0.5rem 0 0.5rem 1rem; }
+      #main-display #continent-dropdown #dropdown-items p:hover {
+        cursor: pointer;
+        background: #fafafa; }
+  #main-display #continent-dropdown:hover #dropdown-items {
+    display: block; }
+
+#flag-container {
+  height: 100vh;
+  background: #fafafa; }
