@@ -69,5 +69,9 @@ body {
     display: block; }
 
 #flag-container {
-  height: 100vh;
   background: #fafafa; }
+  #flag-container #card-list {
+    display: flex;
+    flex-wrap: wrap; }
+    #flag-container #card-list .temp {
+      margin: 10px; }

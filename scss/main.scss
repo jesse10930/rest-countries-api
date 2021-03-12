@@ -91,6 +91,14 @@ body {
 }
 
 #flag-container {
-  height: 100vh;
   background: $Light-Mode-Background;
+
+  #card-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .temp {
+      margin: 10px;
+    }
+  }
 }
