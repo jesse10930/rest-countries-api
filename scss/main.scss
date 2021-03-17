@@ -130,12 +130,120 @@ body {
         h2 {
           padding-bottom: 1rem;
         }
+      }
+    }
+  }
 
-        .line {
-          line-height: 2rem;
+  #details-container {
+    padding: 0 3rem;
+    height: 80vh;
 
-          .bold {
-            font-weight: bold;
+    #back-btn {
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      background: $Dark-Mode-Text-Light-Mode-Elements;
+      display: flex;
+      justify-content: center;
+      width: 10rem;
+      padding: 0.5rem;
+      margin-bottom: 6rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: $Light-Mode-Background;
+        box-shadow: 0px 0px 20px 20px rgba(82, 82, 82, 0.2);
+        transform: translateY(4px);
+      }
+
+      i {
+        padding-right: 10px;
+      }
+
+      #back-title {
+        font-family: 'Nunito Sans', sans-serif; 
+        font-size: 20px;
+        padding-left: 10px;
+      }
+    }
+
+    #country-info {
+      display: flex;
+      justify-content: space-between;
+
+      #flag {
+        img {
+          width: 600px;
+          height: auto;
+        }
+      }
+
+      #details {
+        width: 600px;
+        height: 400px;
+        display: grid;
+        grid-template-areas: 
+        'countryName countryName'
+        'countryName countryName'
+        'nativeName capital'
+        'population topLevDom'
+        'region currencies'
+        'subRegion languages'
+        'subRegion languages'
+        'borderCountries borderCountries';
+
+        .countryName {
+          grid-area: countryName;
+        }
+        .nativeName {
+          grid-area: nativeName;
+        }
+        .population {
+          grid-area: population;
+        }
+        .region {
+          grid-area: region;
+        }
+        .subRegion {
+          grid-area: subRegion;
+        }
+        .capital {
+          grid-area: capital;
+        }
+        .topLevDom {
+          grid-area: topLevDom;
+        }
+        .currencies {
+          grid-area: currencies;
+        }
+        .languages {
+          grid-area: languages;
+        }
+        .borderCountries {
+          grid-area: borderCountries;
+
+          #border-button {
+            padding: 0.1rem 1rem;
+            margin: 0 5px;
+            box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            background: $Dark-Mode-Text-Light-Mode-Elements;
+            
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:active {
+              background-color:$Light-Mode-Background;
+              box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+              transform: translateY(4px);
+            }
           }
         }
       }

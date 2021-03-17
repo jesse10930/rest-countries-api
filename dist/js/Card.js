@@ -3,23 +3,73 @@ class Card extends React.Component {
     super(props);
     this.state = {
       popWithComma: '',
+      currencyType: [],
+      borderCountriesArr: [],
+      languageName: [],
     };
   }
 
   componentDidMount() {
+    let currBuff = [];
+    let langBuff = [];
+    let bordBuff = [];
+
+    this.props.currencies.map((currency, i) => {
+      currBuff.push(currency.name);
+    });
+    this.props.languages.map((language, i) => {
+      langBuff.push(language.name);
+    });
+    this.props.borderCountries.map((country, i) => {
+      bordBuff.push(country);
+    });
+
     this.setState({
       popWithComma: this.props.population
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ','),
+      currencyType: currBuff,
+      borderCountriesArr: bordBuff,
+      languageName: langBuff,
     });
   }
 
   render() {
-    const { flag, name, region, capital, onClick } = this.props;
+    const {
+      flag,
+      name,
+      region,
+      capital,
+      nativeName,
+      subRegion,
+      topLevDom,
+      currencies,
+      languages,
+      borderCountries,
+      onClick,
+    } = this.props;
+
     const { popWithComma } = this.state;
 
     return (
-      <div id='country-card' onClick={onClick}>
+      <div
+        id='country-card'
+        onClick={() =>
+          onClick(
+            flag,
+            name,
+            region,
+            capital,
+            popWithComma,
+            nativeName,
+            subRegion,
+            topLevDom,
+            currencies,
+            languages,
+            borderCountries
+          )
+        }
+      >
         <div id='flag-div'>
           <img src={flag} />
         </div>
