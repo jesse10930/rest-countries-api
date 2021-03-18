@@ -100,26 +100,48 @@ class CardList extends React.Component {
 
     if (!this.state.clicked) {
       return (
-        <div id='card-list'>
-          {this.state.countries
-            ? this.state.countries.map((country, i) => (
-                <Card
-                  id={i}
-                  flag={country.flag}
-                  name={country.name}
-                  population={country.population}
-                  region={country.region}
-                  capital={country.capital}
-                  nativeName={country.nativeName}
-                  subRegion={country.subregion}
-                  topLevDom={country.topLevelDomain}
-                  currencies={country.currencies}
-                  languages={country.languages}
-                  borderCountries={country.borders}
-                  onClick={this.onCardClick}
-                />
-              ))
-            : 'Loading...'}
+        <div id='main-display'>
+          <div id='search-dropdown'>
+            <input
+              id='search-box'
+              type='text'
+              placeholder='&#xf002;     Search for a country...'
+            ></input>
+            <div id='continent-dropdown'>
+              <button id='dropdown-btn'>
+                <p id='dropdown-title'>Filter by Region</p>
+                <i class='fas fa-angle-down'></i>
+              </button>
+              <div id='dropdown-items'>
+                <p id='africa'>Africa</p>
+                <p id='america'>America</p>
+                <p id='asia'>Asia</p>
+                <p id='europe'>Europe</p>
+                <p id='oceania'>Oceania</p>
+              </div>
+            </div>
+          </div>
+          <div id='card-list'>
+            {this.state.countries
+              ? this.state.countries.map((country, i) => (
+                  <Card
+                    id={i}
+                    flag={country.flag}
+                    name={country.name}
+                    population={country.population}
+                    region={country.region}
+                    capital={country.capital}
+                    nativeName={country.nativeName}
+                    subRegion={country.subregion}
+                    topLevDom={country.topLevelDomain}
+                    currencies={country.currencies}
+                    languages={country.languages}
+                    borderCountries={country.borders}
+                    onClick={this.onCardClick}
+                  />
+                ))
+              : 'Loading...'}
+          </div>
         </div>
       );
     } else {
@@ -177,25 +199,18 @@ class CardList extends React.Component {
               </p>
               <p className='line borderCountries'>
                 <span className='bold'>Border Countries: </span>
-                {borderCountries.map(
-                  (borderCountry, i) =>
-                    this.state.countries.map(
-                      (country, i) =>
-                        country.alpha3Code === borderCountry && (
-                          <button
-                            id='border-button'
-                            onClick={() => this.onBorderClick(borderCountry)}
-                          >
-                            {country.name}
-                          </button>
-                        )
-                    )
-                  // <button
-                  //   id='border-button'
-                  //   onClick={() => this.onBorderClick(borderCountry)}
-                  // >
-                  //   {borderCountry}
-                  // </button>
+                {borderCountries.map((borderCountry, i) =>
+                  this.state.countries.map(
+                    (country, i) =>
+                      country.alpha3Code === borderCountry && (
+                        <button
+                          id='border-button'
+                          onClick={() => this.onBorderClick(borderCountry)}
+                        >
+                          {country.name}
+                        </button>
+                      )
+                  )
                 )}
               </p>
             </div>
