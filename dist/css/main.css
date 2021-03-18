@@ -141,12 +141,18 @@ body {
     #countries-container #details-container #country-info {
       display: flex;
       justify-content: space-between; }
-      #countries-container #details-container #country-info #flag img {
-        width: 600px;
-        height: auto; }
+      #countries-container #details-container #country-info #flag {
+        width: 45%; }
+        #countries-container #details-container #country-info #flag img {
+          width: 100%;
+          height: auto;
+          max-height: 450px;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%); }
       #countries-container #details-container #country-info #details {
-        width: 600px;
-        height: 400px;
+        width: 45%;
+        height: auto;
         display: grid;
         grid-template-areas: 'countryName countryName' 'countryName countryName' 'nativeName capital' 'population topLevDom' 'region currencies' 'subRegion languages' 'subRegion languages' 'borderCountries borderCountries'; }
         #countries-container #details-container #country-info #details .countryName {

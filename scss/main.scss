@@ -188,15 +188,21 @@ body {
       justify-content: space-between;
 
       #flag {
+        width: 45%;
+
         img {
-          width: 600px;
+          width: 100%;
           height: auto;
+          max-height: 450px;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
 
       #details {
-        width: 600px;
-        height: 400px;
+        width: 45%;
+        height: auto;
         display: grid;
         grid-template-areas:
           'countryName countryName'
