@@ -1,0 +1,36 @@
+// Smart Phones
+@media (max-width: 500px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  #main-container {
+    width: 100%;
+
+    #countries-container {
+      #header {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      #main-display {
+        display: flex;
+        flex-direction: column;
+
+        #search-dropdown {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

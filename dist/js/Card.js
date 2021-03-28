@@ -47,6 +47,7 @@ class Card extends React.Component {
       languages,
       borderCountries,
       onClick,
+      dark,
     } = this.props;
 
     const { popWithComma } = this.state;
@@ -54,6 +55,7 @@ class Card extends React.Component {
     return (
       <div
         id='country-card'
+        className={dark ? 'dark' : ''}
         onClick={() =>
           onClick(
             flag,
