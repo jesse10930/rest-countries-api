@@ -256,7 +256,7 @@ class CardList extends React.Component {
                       : language.name
                   )}
                 </p>
-                <p className='line borderCountries'>
+                <p id='bord-count' className='line borderCountries'>
                   <span className='bold'>Border Countries: </span>
                   {borderCountries.map((borderCountry, i) =>
                     this.state.countries.map(

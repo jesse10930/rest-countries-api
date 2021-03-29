@@ -62,6 +62,14 @@ body {
       &.dark {
         background: $Dark-Mode-Background;
         color: $Dark-Mode-Text-Light-Mode-Elements;
+
+        ::placeholder {
+          color: $Dark-Mode-Text-Light-Mode-Elements;
+        }
+      }
+
+      ::placeholder {
+        color: $Light-Mode-Text;
       }
 
       #search-box {
@@ -75,10 +83,6 @@ body {
         font-family: 'Font Awesome 5 Free' !important;
         font-weight: 900;
         font-size: 16px;
-
-        input::placeholder {
-          color: $Light-Mode-Text;
-        }
 
         &.dark {
           background: $Dark-Mode-Elements;

@@ -10,8 +10,6 @@
   }
 
   #main-container {
-    width: 100%;
-
     #countries-container {
       #header {
         padding: 0;
@@ -20,15 +18,90 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        #title {
+          padding-left: 5px;
+        }
+
+        #background-toggle {
+          padding-right: 5px;
+        }
       }
 
       #main-display {
+        padding: 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
 
         #search-dropdown {
           display: flex;
           flex-direction: column;
+          align-items: flex-start;
+          padding: 2rem 0;
+
+          #search-box {
+            margin-bottom: 2rem;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            width: 45%;
+            font-size: 14px;
+          }
+
+          #continent-dropdown {
+            width: 50%;
+            margin-left: 1.5rem;
+          }
+        }
+
+        #card-list {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
+      #details-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        #back-btn {
+          zoom: 75%;
+          margin-bottom: 3rem;
+        }
+        #country-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          #flag {
+            width: 100%;
+            padding-top: 7rem;
+            margin-bottom: -4rem;
+          }
+
+          #details {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .countryName {
+              font-size: 20px;
+              padding-bottom: 20px;
+            }
+
+            .capital {
+              padding-bottom: 20px;
+            }
+
+            .languages {
+              padding-bottom: 20px;
+            }
+          }
         }
       }
     }
