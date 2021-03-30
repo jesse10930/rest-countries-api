@@ -128,10 +128,10 @@ class CardList extends React.Component {
       );
     });
 
-    if (!this.state.clicked) {
-      return (
-        <div id='countries-container' className={dark ? 'dark' : ''}>
-          <Header dark={dark} onClick={this.onToggleThemeClick} />
+    return (
+      <div id='countries-container' className={dark ? 'dark' : ''}>
+        <Header dark={dark} onClick={this.onToggleThemeClick} />
+        {!this.state.clicked ? (
           <div id='main-display'>
             <SearchDropdown
               dark={dark}
@@ -160,12 +160,7 @@ class CardList extends React.Component {
               ))}
             </div>
           </div>
-        </div>
-      );
-    } else {
-      return (
-        <div id='countries-container' className={dark ? 'dark' : ''}>
-          <Header dark={dark} onClick={this.onToggleThemeClick} />
+        ) : (
           <Details
             dark={dark}
             onBackClick={this.onBackClick}
@@ -183,8 +178,8 @@ class CardList extends React.Component {
             onBorderClick={this.onBorderClick}
             countries={countries}
           />
-        </div>
-      );
-    }
+        )}
+      </div>
+    );
   }
 }
