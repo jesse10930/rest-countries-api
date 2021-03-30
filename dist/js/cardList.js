@@ -133,47 +133,12 @@ class CardList extends React.Component {
         <div id='countries-container' className={dark ? 'dark' : ''}>
           <Header dark={dark} onClick={this.onToggleThemeClick} />
           <div id='main-display'>
-            <div id='search-dropdown' className={dark ? 'dark' : ''}>
-              <input
-                id='search-box'
-                className={dark ? 'dark' : ''}
-                type='input'
-                placeholder='&#xf002;     Search for a country...'
-                onChange={this.onSearchChange}
-              ></input>
-              <div id='continent-dropdown'>
-                <button id='dropdown-btn' className={dark ? 'dark' : ''}>
-                  <p id='dropdown-title'>
-                    {this.state.continent
-                      ? this.state.continent[0].toUpperCase() +
-                        this.state.continent.slice(1)
-                      : 'Filter by Region'}
-                  </p>
-                  <i class='fas fa-angle-down'></i>
-                </button>
-                <div
-                  id='dropdown-items'
-                  className={dark ? 'dark' : ''}
-                  onClick={this.onContinentClick}
-                >
-                  <p id='africa' className={dark ? 'dark' : ''}>
-                    Africa
-                  </p>
-                  <p id='americas' className={dark ? 'dark' : ''}>
-                    Americas
-                  </p>
-                  <p id='asia' className={dark ? 'dark' : ''}>
-                    Asia
-                  </p>
-                  <p id='europe' className={dark ? 'dark' : ''}>
-                    Europe
-                  </p>
-                  <p id='oceania' className={dark ? 'dark' : ''}>
-                    Oceania
-                  </p>
-                </div>
-              </div>
-            </div>
+            <SearchDropdown
+              dark={dark}
+              onChange={this.onSearchChange}
+              continent={this.state.continent}
+              onClick={this.onContinentClick}
+            />
             <div id='card-list'>
               {filteredCountries.map((country, i) => (
                 <Card
@@ -201,81 +166,23 @@ class CardList extends React.Component {
       return (
         <div id='countries-container' className={dark ? 'dark' : ''}>
           <Header dark={dark} onClick={this.onToggleThemeClick} />
-          <div id='details-container'>
-            <button
-              id='back-btn'
-              className={dark ? 'dark' : ''}
-              onClick={this.onBackClick}
-            >
-              <i class='fas fa-long-arrow-alt-left fa-2x'></i>
-              <p id='back-title'>Back</p>
-            </button>
-            <div id='country-info'>
-              <div id='flag'>
-                <img src={flag}></img>
-              </div>
-              <div id='details'>
-                <h1 className='countryName'>{countryName}</h1>
-                <p className='line nativeName'>
-                  <span className='bold'>Native Name: </span>
-                  {nativeName}
-                </p>
-                <p className='line population'>
-                  <span className='bold'>Population: </span>
-                  {population}
-                </p>
-                <p className='line region'>
-                  <span className='bold'>Region: </span>
-                  {region}
-                </p>
-                <p className='line subRegion'>
-                  <span className='bold'>Sub Region: </span>
-                  {subRegion}
-                </p>
-                <p className='line capital'>
-                  <span className='bold'>Capital: </span>
-                  {capital}
-                </p>
-                <p className='line topLevDom'>
-                  <span className='bold'>Top Level Domain: </span>
-                  {topLevDom}
-                </p>
-                <p className='line currencies'>
-                  <span className='bold'>Currencies: </span>
-                  {currencies.map((currency, i) =>
-                    i < currencies.length - 1
-                      ? currency.name + ', '
-                      : currency.name
-                  )}
-                </p>
-                <p className='line languages'>
-                  <span className='bold'>Languages: </span>
-                  {languages.map((language, i) =>
-                    i < languages.length - 1
-                      ? language.name + ', '
-                      : language.name
-                  )}
-                </p>
-                <p id='bord-count' className='line borderCountries'>
-                  <span className='bold'>Border Countries: </span>
-                  {borderCountries.map((borderCountry, i) =>
-                    this.state.countries.map(
-                      (country, i) =>
-                        country.alpha3Code === borderCountry && (
-                          <button
-                            id='border-button'
-                            className={dark ? 'dark' : ''}
-                            onClick={() => this.onBorderClick(borderCountry)}
-                          >
-                            {country.name}
-                          </button>
-                        )
-                    )
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
+          <Details
+            dark={dark}
+            onBackClick={this.onBackClick}
+            flag={flag}
+            countryName={countryName}
+            nativeName={nativeName}
+            population={population}
+            region={region}
+            subRegion={subRegion}
+            capital={capital}
+            topLevDom={topLevDom}
+            currencies={currencies}
+            languages={languages}
+            borderCountries={borderCountries}
+            onBorderClick={this.onBorderClick}
+            countries={countries}
+          />
         </div>
       );
     }
