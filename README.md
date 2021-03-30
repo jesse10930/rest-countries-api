@@ -5,7 +5,6 @@ Project from [Frontend Mentor.](https://frontendmentor.io) Web app that uses RES
 To build a frontend app. To practice using HTML, CSS, and React web components. To practice interacting with an API.
 
 # Screenshot
-![screenshot](https://res.cloudinary.com/dz209s6jk/image/upload/v1573656786/Challenges/km5lfh7pj0ia5lwzwutr.jpg)
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
 
 # Tech Used
