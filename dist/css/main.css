@@ -83,14 +83,14 @@ body {
         padding: 1rem;
         background: white;
         display: flex;
-        width: 10rem; }
+        width: 10rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 14px; }
         #countries-container #main-display #search-dropdown #continent-dropdown #dropdown-btn.dark {
           background: #2b3945;
           color: white; }
-        #countries-container #main-display #search-dropdown #continent-dropdown #dropdown-btn #dropdown-title {
-          padding-right: 1rem;
-          font-family: 'Nunito Sans', sans-serif;
-          font-size: 14px; }
+        #countries-container #main-display #search-dropdown #continent-dropdown #dropdown-btn i {
+          margin-left: 1rem; }
       #countries-container #main-display #search-dropdown #continent-dropdown #dropdown-items {
         border-radius: 5px;
         margin-top: 1px;

@@ -104,16 +104,16 @@ body {
           background: $Dark-Mode-Text-Light-Mode-Elements;
           display: flex;
           width: 10rem;
+          font-family: 'Nunito Sans', sans-serif;
+          font-size: 14px;
 
           &.dark {
             background: $Dark-Mode-Elements;
             color: $Dark-Mode-Text-Light-Mode-Elements;
           }
 
-          #dropdown-title {
-            padding-right: 1rem;
-            font-family: 'Nunito Sans', sans-serif;
-            font-size: 14px;
+          i {
+            margin-left: 1rem;
           }
         }
 

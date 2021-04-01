@@ -21,11 +21,9 @@ class SearchDropdown extends React.Component {
         ></input>
         <div id='continent-dropdown'>
           <button id='dropdown-btn' className={dark ? 'dark' : ''}>
-            <p id='dropdown-title'>
-              {continent
-                ? continent[0].toUpperCase() + continent.slice(1)
-                : 'Filter by Region'}
-            </p>
+            {continent
+              ? continent[0].toUpperCase() + continent.slice(1)
+              : 'Filter by Region'}
             <i class='fas fa-angle-down'></i>
           </button>
           <div
