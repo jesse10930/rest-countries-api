@@ -93,7 +93,9 @@ class CardList extends React.Component {
   }
 
   onContinentClick(e) {
-    this.setState({ continent: e.target.id });
+    e.target.id === 'world'
+      ? this.setState({ continent: '' })
+      : this.setState({ continent: e.target.id });
   }
 
   onToggleThemeClick(e) {

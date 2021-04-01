@@ -35,7 +35,7 @@ class Details extends React.Component {
         </button>
         <div id='country-info'>
           <div id='flag'>
-            <img src={flag}></img>
+            <img src={flag} alt='flag'></img>
           </div>
           <div id='details'>
             <h1 className='countryName'>{countryName}</h1>

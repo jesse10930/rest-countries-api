@@ -36,6 +36,7 @@ class Card extends React.Component {
 
   render() {
     const {
+      id,
       flag,
       name,
       region,
@@ -54,7 +55,7 @@ class Card extends React.Component {
 
     return (
       <div
-        id='country-card'
+        id={'country-card-' + id}
         className={dark ? 'dark' : ''}
         onClick={() =>
           onClick(
@@ -72,10 +73,10 @@ class Card extends React.Component {
           )
         }
       >
-        <div id='flag-div'>
-          <img src={flag} />
+        <div id={'flag-div-' + id}>
+          <img src={flag} alt='flag' />
         </div>
-        <div id='description'>
+        <div id={'description-' + id}>
           <h2 className='line'>{name}</h2>
           <p className='line'>
             <span className='bold'>Population: </span>
