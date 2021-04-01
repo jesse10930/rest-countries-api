@@ -47,6 +47,10 @@
             margin-right: 1.5rem;
             width: 90%;
             font-size: 16px;
+
+            ::-webkit-search-cancel-button {
+              display: none;
+            }
           }
 
           #continent-dropdown {
