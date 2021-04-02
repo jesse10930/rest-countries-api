@@ -11,6 +11,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+// main app
 #countries-container {
   min-height: 100vh;
   background: $Light-Mode-Background;
@@ -343,4 +344,5 @@ body {
   }
 }
 
+// mobile
 @import 'mobile';

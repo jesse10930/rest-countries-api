@@ -1,4 +1,5 @@
 class Card extends React.Component {
+  // initial state
   constructor(props) {
     super(props);
     this.state = {
@@ -8,6 +9,7 @@ class Card extends React.Component {
     };
   }
 
+  // set state for currencies, languages, and border countries
   componentDidMount() {
     let currBuff = [];
     let langBuff = [];
@@ -31,6 +33,7 @@ class Card extends React.Component {
   }
 
   render() {
+    // destructor props
     const {
       id,
       flag,
@@ -52,6 +55,7 @@ class Card extends React.Component {
       <div
         id={'country-card-' + id}
         className={dark ? 'dark' : ''}
+        // pass all props to onClick function
         onClick={() =>
           onClick(
             flag,
@@ -75,6 +79,7 @@ class Card extends React.Component {
           <h2 className='line'>{name}</h2>
           <p className='line'>
             <span className='bold'>Population: </span>
+            {/* add commas to population */}
             {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
           </p>
           <p className='line'>

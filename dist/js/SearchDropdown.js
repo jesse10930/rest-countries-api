@@ -5,10 +5,12 @@ class SearchDropdown extends React.Component {
   }
 
   render() {
+    // destructure props
     const { dark, continent, onChange, onClick } = this.props;
 
     return (
       <div id='search-dropdown' className={dark ? 'dark' : ''}>
+        {/* search box */}
         <input
           id='search-box'
           className={dark ? 'dark' : ''}
@@ -21,6 +23,7 @@ class SearchDropdown extends React.Component {
         ></input>
         <div id='continent-dropdown'>
           <button id='dropdown-btn' className={dark ? 'dark' : ''}>
+            {/* Capitalize continent */}
             {continent
               ? continent[0].toUpperCase() + continent.slice(1)
               : 'Filter by Region'}

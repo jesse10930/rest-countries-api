@@ -5,6 +5,7 @@ class Details extends React.Component {
   }
 
   render() {
+    // destructure props
     const {
       dark,
       onBackClick,
@@ -33,6 +34,7 @@ class Details extends React.Component {
           <i class='fas fa-long-arrow-alt-left fa-2x'></i>
           <p id='back-title'>Back</p>
         </button>
+        {/* clicked country details */}
         <div id='country-info'>
           <div id='flag'>
             <img src={flag} alt='flag'></img>
@@ -45,6 +47,7 @@ class Details extends React.Component {
             </p>
             <p className='line population'>
               <span className='bold'>Population: </span>
+              {/* add commas to population */}
               {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
             </p>
             <p className='line region'>
@@ -65,18 +68,21 @@ class Details extends React.Component {
             </p>
             <p className='line currencies'>
               <span className='bold'>Currencies: </span>
+              {/* add commas to currencies list */}
               {currencies.map((currency, i) =>
                 i < currencies.length - 1 ? currency.name + ', ' : currency.name
               )}
             </p>
             <p className='line languages'>
               <span className='bold'>Languages: </span>
+              {/* add commas to languages list */}
               {languages.map((language, i) =>
                 i < languages.length - 1 ? language.name + ', ' : language.name
               )}
             </p>
             <p id='bord-count' className='line borderCountries'>
               <span className='bold'>Border Countries: </span>
+              {/* find border country by alpha3 code, return country info for button */}
               {borderCountries.map((borderCountry, i) =>
                 countries.map(
                   (country, i) =>

@@ -5,6 +5,7 @@ class Header extends React.Component {
   }
 
   render() {
+    // destructure props
     const { dark, onClick } = this.props;
 
     return (
@@ -12,6 +13,7 @@ class Header extends React.Component {
         <div id='title'>
           <h3>Where in the World?</h3>
         </div>
+        {/* dark mode toggle */}
         <div id='background-toggle' onClick={onClick}>
           <i class='far fa-moon'></i>
           <h5 id='toggle-title' class='false' onClick={onClick}>
