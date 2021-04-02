@@ -45,7 +45,7 @@ class Details extends React.Component {
             </p>
             <p className='line population'>
               <span className='bold'>Population: </span>
-              {population}
+              {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
             </p>
             <p className='line region'>
               <span className='bold'>Region: </span>

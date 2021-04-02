@@ -2,7 +2,6 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      popWithComma: '',
       currencyType: [],
       borderCountriesArr: [],
       languageName: [],
@@ -25,9 +24,6 @@ class Card extends React.Component {
     });
 
     this.setState({
-      popWithComma: this.props.population
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ','),
       currencyType: currBuff,
       borderCountriesArr: bordBuff,
       languageName: langBuff,
@@ -46,12 +42,11 @@ class Card extends React.Component {
       topLevDom,
       currencies,
       languages,
+      population,
       borderCountries,
       onClick,
       dark,
     } = this.props;
-
-    const { popWithComma } = this.state;
 
     return (
       <div
@@ -63,7 +58,7 @@ class Card extends React.Component {
             name,
             region,
             capital,
-            popWithComma,
+            population,
             nativeName,
             subRegion,
             topLevDom,
@@ -80,7 +75,7 @@ class Card extends React.Component {
           <h2 className='line'>{name}</h2>
           <p className='line'>
             <span className='bold'>Population: </span>
-            {popWithComma}
+            {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
           </p>
           <p className='line'>
             <span className='bold'>Region: </span>
