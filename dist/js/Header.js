@@ -11,6 +11,10 @@ class Header extends React.Component {
     return (
       <section id='header' className={dark ? 'dark' : ''}>
         <div id='title'>
+          <a href='//www.codebyronda.com' target='_blank'>
+            <span className='sr-only'>portfolio</span>
+            <img src='./images/prof-pic-resize.jpg' alt='prof-pic' />
+          </a>
           <h3>Where in the World?</h3>
         </div>
         {/* dark mode toggle */}

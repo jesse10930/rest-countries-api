@@ -31,6 +31,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    #countries-container #header #title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 18rem; }
+      #countries-container #header #title a img {
+        width: 50px; }
     #countries-container #header.dark {
       background: #2b3945;
       color: white; }
@@ -265,6 +272,8 @@ body {
         margin-right: 1.5rem;
         width: 90%;
         font-size: 16px; }
+        #main-container #countries-container #main-display #search-dropdown #search-box ::-webkit-search-cancel-button {
+          display: none; }
       #main-container #countries-container #main-display #search-dropdown #continent-dropdown {
         width: 50%;
         margin-left: 1.5rem; }

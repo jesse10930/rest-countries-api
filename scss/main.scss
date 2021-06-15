@@ -30,6 +30,19 @@ body {
     justify-content: space-between;
     align-items: center;
 
+    #title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 18rem;
+
+      a {
+        img {
+          width: 50px;
+        }
+      }
+    }
+
     &.dark {
       background: $Dark-Mode-Elements;
       color: $Dark-Mode-Text-Light-Mode-Elements;
