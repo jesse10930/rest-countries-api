@@ -11,16 +11,19 @@ class SearchDropdown extends React.Component {
     return (
       <div id='search-dropdown' className={dark ? 'dark' : ''}>
         {/* search box */}
-        <input
-          id='search-box'
-          className={dark ? 'dark' : ''}
-          type='search'
-          placeholder='&#xf002;     Search for a country...'
-          onChange={onChange}
-          autocomplete='off'
-          name='search-box'
-          aria-label='Search for country'
-        ></input>
+        <div id='search-box-container' className={dark ? 'dark' : ''}>
+          <i class='fas fa-search'></i>
+          <input
+            id='search-box'
+            className={dark ? 'dark' : ''}
+            type='search'
+            placeholder='Search for a country...'
+            onChange={onChange}
+            autocomplete='off'
+            name='search-box'
+            aria-label='Search for country'
+          ></input>
+        </div>
         <div id='continent-dropdown'>
           <button id='dropdown-btn' className={dark ? 'dark' : ''}>
             {/* Capitalize continent */}

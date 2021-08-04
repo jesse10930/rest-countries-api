@@ -66,22 +66,30 @@ body {
           color: white; }
       #countries-container #main-display #search-dropdown ::placeholder {
         color: #111517; }
-      #countries-container #main-display #search-dropdown #search-box {
-        border: none;
-        outline: none;
+      #countries-container #main-display #search-dropdown #search-box-container {
+        display: flex;
+        align-items: center;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
-        height: 3rem;
         width: 25rem;
-        padding: 0 8rem 0 2rem;
-        font-family: 'Font Awesome 5 Free' !important;
-        font-weight: 900;
-        font-size: 16px; }
-        #countries-container #main-display #search-dropdown #search-box.dark {
-          background: #2b3945;
-          color: white; }
-          #countries-container #main-display #search-dropdown #search-box.dark input::placeholder {
+        padding: 0 2rem;
+        background-color: white; }
+        #countries-container #main-display #search-dropdown #search-box-container.dark {
+          background: #2b3945; }
+        #countries-container #main-display #search-dropdown #search-box-container #search-box {
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          height: 3rem;
+          padding-left: 2rem;
+          font-weight: 700;
+          font-size: 16px;
+          width: 100%; }
+          #countries-container #main-display #search-dropdown #search-box-container #search-box.dark {
+            background: #2b3945;
             color: white; }
+            #countries-container #main-display #search-dropdown #search-box-container #search-box.dark input::placeholder {
+              color: white; }
       #countries-container #main-display #search-dropdown #continent-dropdown #dropdown-btn {
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         border: none;
@@ -252,7 +260,8 @@ body {
     flex-direction: row;
     justify-content: space-between; }
     #main-container #countries-container #header #title {
-      padding-left: 5px; }
+      padding-left: 5px;
+      justify-content: flex-start; }
     #main-container #countries-container #header #background-toggle {
       padding-right: 5px; }
   #main-container #countries-container #main-display {
@@ -266,14 +275,16 @@ body {
       flex-direction: column;
       align-items: flex-start;
       padding: 2rem 0; }
-      #main-container #countries-container #main-display #search-dropdown #search-box {
+      #main-container #countries-container #main-display #search-dropdown #search-box-container {
         margin-bottom: 2rem;
         margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        width: 90%;
-        font-size: 16px; }
-        #main-container #countries-container #main-display #search-dropdown #search-box ::-webkit-search-cancel-button {
-          display: none; }
+        padding: 0 1rem;
+        width: 80%; }
+        #main-container #countries-container #main-display #search-dropdown #search-box-container #search-box {
+          font-size: 16px;
+          padding-left: 1rem; }
+          #main-container #countries-container #main-display #search-dropdown #search-box-container #search-box ::-webkit-search-cancel-button {
+            display: none; }
       #main-container #countries-container #main-display #search-dropdown #continent-dropdown {
         width: 50%;
         margin-left: 1.5rem; }
@@ -281,6 +292,8 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: center; }
+      #main-container #countries-container #main-display #card-list [id^='country-card']:hover {
+        transform: scale(1); }
   #main-container #countries-container #details-container {
     height: auto;
     display: flex;
@@ -309,3 +322,7 @@ body {
           padding-bottom: 20px; }
         #main-container #countries-container #details-container #country-info #details .languages {
           padding-bottom: 20px; } }
+
+@media (max-width: 770px) {
+  #main-container #countries-container #main-display #card-list [id^='country-card']:hover {
+    transform: scale(1); } }

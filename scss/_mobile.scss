@@ -21,6 +21,7 @@
 
         #title {
           padding-left: 5px;
+          justify-content: flex-start;
         }
 
         #background-toggle {
@@ -41,15 +42,19 @@
           align-items: flex-start;
           padding: 2rem 0;
 
-          #search-box {
+          #search-box-container {
             margin-bottom: 2rem;
             margin-left: 1.5rem;
-            margin-right: 1.5rem;
-            width: 90%;
-            font-size: 16px;
+            padding: 0 1rem;
+            width: 80%;
 
-            ::-webkit-search-cancel-button {
-              display: none;
+            #search-box {
+              font-size: 16px;
+              padding-left: 1rem;
+
+              ::-webkit-search-cancel-button {
+                display: none;
+              }
             }
           }
 
@@ -63,6 +68,12 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
+
+          [id^='country-card'] {
+            &:hover {
+              transform: scale(1);
+            }
+          }
         }
       }
 
@@ -104,6 +115,23 @@
 
             .languages {
               padding-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 770px) {
+  #main-container {
+    #countries-container {
+      #main-display {
+        #card-list {
+          [id^='country-card'] {
+            &:hover {
+              transform: scale(1);
             }
           }
         }

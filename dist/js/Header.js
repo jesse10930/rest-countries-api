@@ -19,7 +19,7 @@ class Header extends React.Component {
         </div>
         {/* dark mode toggle */}
         <div id='background-toggle' onClick={onClick}>
-          <i class='far fa-moon'></i>
+          {dark ? <i class='fas fa-moon'></i> : <i class='far fa-moon'></i>}
           <h5 id='toggle-title' class='false' onClick={onClick}>
             Dark Mode
           </h5>
