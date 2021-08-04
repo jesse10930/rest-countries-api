@@ -72,6 +72,7 @@ class CardList extends React.Component {
 
   // get border countries from alpha3code on border button click
   onBorderClick(code) {
+    window.scrollTo(0, 0);
     this.state.countries.map((country, i) => {
       if (country.alpha3Code === code) {
         this.setState({

@@ -4,6 +4,11 @@ class Details extends React.Component {
     this.state = {};
   }
 
+  // Scroll to top
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     // destructure props
     const {
