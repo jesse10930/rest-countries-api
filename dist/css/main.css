@@ -301,7 +301,8 @@ body {
     justify-content: flex-start; }
     #main-container #countries-container #details-container #back-btn {
       zoom: 75%;
-      margin-bottom: 3rem; }
+      margin-bottom: 2rem;
+      align-items: center; }
     #main-container #countries-container #details-container #country-info {
       display: flex;
       flex-direction: column;
