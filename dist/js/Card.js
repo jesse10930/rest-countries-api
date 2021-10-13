@@ -2,38 +2,10 @@ class Card extends React.Component {
   // initial state
   constructor(props) {
     super(props);
-    this.state = {
-      currencyType: [],
-      borderCountriesArr: [],
-      languageName: [],
-    };
-  }
-
-  // set state for currencies, languages, and border countries
-  componentDidMount() {
-    let currBuff = [];
-    let langBuff = [];
-    let bordBuff = [];
-
-    this.props.currencies.map((currency, i) => {
-      currBuff.push(currency.name);
-    });
-    this.props.languages.map((language, i) => {
-      langBuff.push(language.name);
-    });
-    this.props.borderCountries.map((country, i) => {
-      bordBuff.push(country);
-    });
-
-    this.setState({
-      currencyType: currBuff,
-      borderCountriesArr: bordBuff,
-      languageName: langBuff,
-    });
   }
 
   render() {
-    // destructor props
+    // destructure props
     const {
       id,
       flag,

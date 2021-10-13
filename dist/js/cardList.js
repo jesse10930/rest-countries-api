@@ -30,7 +30,7 @@ class CardList extends React.Component {
 
   // get country info on initial mount
   componentDidMount() {
-    fetch('https://restcountries.eu/rest/v2/all')
+    fetch('https://restcountries.com/v3.1/all')
       .then((res) => res.json())
       .then((data) => this.setState({ countries: data }));
   }
@@ -49,18 +49,22 @@ class CardList extends React.Component {
     languages,
     borderCountries
   ) {
+    let currenciesArr = Object.keys(currencies);
+    let languagesArr = Object.values(languages);
+    let mainLang = Object.keys(languages)[0];
+
     this.setState({
       clicked: true,
       flag: flag,
       countryName: name,
       region: region,
-      capital: capital,
+      capital: capital[0],
       population: population,
-      nativeName: nativeName,
+      nativeName: nativeName[mainLang].official,
       subRegion: subRegion,
-      topLevDom: topLevDom,
-      currencies: currencies,
-      languages: languages,
+      topLevDom: topLevDom[0],
+      currencies: currenciesArr,
+      languages: languagesArr,
       borderCountries: borderCountries,
     });
   }
@@ -74,20 +78,24 @@ class CardList extends React.Component {
   onBorderClick(code) {
     window.scrollTo(0, 0);
     this.state.countries.map((country, i) => {
-      if (country.alpha3Code === code) {
+      if (country.cca3 === code) {
+        let currenciesArr = Object.keys(country.currencies);
+        let languagesArr = Object.values(country.languages);
+        let mainLang = Object.keys(country.languages)[0];
+
         this.setState({
-          flag: country.flag,
-          countryName: country.name,
+          flag: country.flags.svg,
+          countryName: country.name.common,
           region: country.region,
-          capital: country.capital,
+          capital: country.capital[0],
           population: country.population
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ','),
-          nativeName: country.nativeName,
+          nativeName: country.name.nativeName[mainLang].official,
           subRegion: country.subregion,
-          topLevDom: country.topLevelDomain,
-          currencies: country.currencies,
-          languages: country.languages,
+          topLevDom: country.tld[0],
+          currencies: currenciesArr,
+          languages: languagesArr,
           borderCountries: country.borders,
         });
       }
@@ -135,7 +143,7 @@ class CardList extends React.Component {
         country.region
           .toLowerCase()
           .includes(this.state.continent.toLowerCase()) &&
-        country.name
+        country.name.common
           .toLowerCase()
           .includes(this.state.searchField.toLowerCase())
       );
@@ -158,14 +166,14 @@ class CardList extends React.Component {
               {filteredCountries.map((country, i) => (
                 <Card
                   id={i}
-                  flag={country.flag}
-                  name={country.name}
+                  flag={country.flags.svg}
+                  name={country.name.common}
                   population={country.population}
                   region={country.region}
                   capital={country.capital}
-                  nativeName={country.nativeName}
+                  nativeName={country.name.nativeName}
                   subRegion={country.subregion}
-                  topLevDom={country.topLevelDomain}
+                  topLevDom={country.tld}
                   currencies={country.currencies}
                   languages={country.languages}
                   borderCountries={country.borders}

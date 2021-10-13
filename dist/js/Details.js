@@ -1,7 +1,6 @@
 class Details extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   // Scroll to top
@@ -75,33 +74,34 @@ class Details extends React.Component {
               <span className='bold'>Currencies: </span>
               {/* add commas to currencies list */}
               {currencies.map((currency, i) =>
-                i < currencies.length - 1 ? currency.name + ', ' : currency.name
+                i < currencies.length - 1 ? currency + ', ' : currency
               )}
             </p>
             <p className='line languages'>
               <span className='bold'>Languages: </span>
               {/* add commas to languages list */}
               {languages.map((language, i) =>
-                i < languages.length - 1 ? language.name + ', ' : language.name
+                i < languages.length - 1 ? language + ', ' : language
               )}
             </p>
             <p id='bord-count' className='line borderCountries'>
               <span className='bold'>Border Countries: </span>
-              {/* find border country by alpha3 code, return country info for button */}
-              {borderCountries.map((borderCountry, i) =>
-                countries.map(
-                  (country, i) =>
-                    country.alpha3Code === borderCountry && (
-                      <button
-                        id='border-button'
-                        className={dark ? 'dark' : ''}
-                        onClick={() => onBorderClick(borderCountry)}
-                      >
-                        {country.name}
-                      </button>
-                    )
-                )
-              )}
+              {/* find border country by cca3 code, return country info for button */}
+              {borderCountries &&
+                borderCountries.map((borderCountry, i) =>
+                  countries.map(
+                    (country, i) =>
+                      country.cca3 === borderCountry && (
+                        <button
+                          id='border-button'
+                          className={dark ? 'dark' : ''}
+                          onClick={() => onBorderClick(borderCountry)}
+                        >
+                          {country.name.common}
+                        </button>
+                      )
+                  )
+                )}
             </p>
           </div>
         </div>
